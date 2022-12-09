@@ -1,12 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import Link from 'next/link';
+import styles from '../styles/produtos.module.css'
 
 function Produtos({produtos}){
     return(
-        <div>
+        <div className={styles.container}>
             {produtos.map((produto) => (
-                <div>
+                <div className={styles.produto}>
                     <Link href='/profile/[id]'as={`/profile/${produto.id}`}>
                         <div>
                             <h2>{produto.title}</h2>

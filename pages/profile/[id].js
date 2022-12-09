@@ -1,7 +1,8 @@
 import axios from 'axios';
+import styles from '../../styles/profile.module.css'
 
 function Profile({produto = {}}){
-    return <div>
+    return <div className={styles.profile}>
         <img src={produto.image}/>
         <p>{produto.title}</p>
         <p>Valor: ${produto.price}</p>
@@ -18,7 +19,7 @@ export async function getStaticProps(context) {
     const produto = await response.data;
 
     return {
-        props: {produto},
+        props: {produto}
     }
 }
 
